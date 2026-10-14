@@ -1,3 +1,138 @@
-.saludo {
-    color: rgb(100, 0, 50);
+/* variables */
+:root{
+    --EE:15px;
+    --br:5px;
+}
+
+
+/* Rest CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  a {
+    font-weight: bolder;
+  }
+}
+
+section {
+  padding: var(--EE);
+}
+
+/* clases */
+.starbucks_logo {
+  width: 100px;
+}
+
+.orden {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.enlace_menu_header {
+  color: rgb(220, 24, 85);
+  transition: color 0.3s ease;
+  &:hover {
+    color: rgb(23, 14, 20);
+  }
+}
+
+.hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://cdn.pixabay.com/photo/2018/04/05/14/09/sunflowers-3292932_1280.jpg");
+  min-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.btn {
+  background-color: rgb(20, 180, 250);
+  border-radius: var(--br);
+  border: solid 1px rgba(20, 180, 250, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  padding: var(--EE);
+}
+
+.info_section {
+  background-color: rgba(120, 40, 255, 0.1);
+  .columna {
+    display: grid;
+    gap: 20px; /* Espacio entre las columnas */
+
+    /* Para móviles: 1 sola columna que ocupa todo el ancho */
+    grid-template-columns: 2fr 1fr;
+    img {
+      max-width: 200px;
+    }
+  }
+}
+
+.orden_columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*centro horizontal*/
+  justify-content: center; /*centro vertical*/
+  gap: 15px;
+}
+
+.card {
+  max-width: 300px;
+  border: solid 1px rgba(10, 52, 22, 0.2);
+  border-radius: var(--br);
+  padding: var(--EE);
+  background-color: rgba(84, 163, 150, 0.4);
+}
+
+.columna_responsive {
+  display: grid;
+  gap: 20px;
+  width: 90vw; /* Asegura que ocupe todo el ancho disponible */
+
+  /* La magia responsiva: 
+    Crea tantas columnas como quepan. Cada una medirá como mínimo 250px 
+    y como máximo 1fr (se estirará para llenar el espacio extra). */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.contact_form {
+  border-radius: var(--br);
+  border: solid 1px rgb(23, 14, 20);
+  padding: var(--EE);
+  background-color: rgba(117, 200, 7, 0.4);
+  min-width: 500px;
+  .texto{
+    padding: var(--EE);
+    width: 90%;
+        border: none;
+    border-radius: var(--br);
+  }
+
+}
+/* ID */
+
+#services {
+  background-color: rgba(56, 205, 125, 0.1);
+}
+
+#contact {
+  background-color: rgba(56, 223, 2, 0.1);
 }
